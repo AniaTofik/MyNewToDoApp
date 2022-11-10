@@ -17,8 +17,8 @@
         placeholder="Dodaj zadanie i datę wykonania"
         #nameInput
       />
-      <input class="col s2 disabled" type="date" />
-      <button class="btn-floating teal ms-1" (click)="createTask(nameInput.value)">+</button>
+      <input class="col s2 disabled" type="date" #dateInput/>
+      <button class="btn-floating teal ms-1" (click)="createTask(nameInput.value, dateInput.value); nameInput.value = ''; dateInput.value = ''">+</button>
     </div>
   
     <ul class="collection">
@@ -42,7 +42,7 @@
   
     <button class="btn red" (click)="clearTasks()">Wyczyść</button>
   
-    <footer class="page-footer mt-5 blue accent-4 d-flex justify-content-center align-items-center">
+    <footer class="page-footer mt-3 blue accent-4 d-flex justify-content-center align-items-center">
           <p>{{ config?.['date'] | date: 'yyyy'}} {{config?.['footer']}}</p>
     </footer>
   </div>
