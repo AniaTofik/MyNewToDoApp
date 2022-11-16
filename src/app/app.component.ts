@@ -7,7 +7,8 @@ import { Task } from './task';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
+  taskName = 'Sugerowane zadanie codzienne: odkurzanie';
+  taskDate= '';
   config: { [key: string] : string } | null = null;
   tasks: Task[] = [{
     name: 'Siłownia',
@@ -36,12 +37,14 @@ export class AppComponent {
     this.tasks = [];
   }
 
-  createTask(name: string, deadLine : string){
+  createTask(){
     const task: Task = {
-      name,
-      deadLine,
+      name: this.taskName,
+      deadLine: this.taskDate,
       done: false,
     };
     this.tasks.push(task);
+    this.taskName='';
+    this.taskDate='';
   }
 }
