@@ -19,7 +19,7 @@ export class AppComponent {
 {
   name: 'Nauka Angulara',
   deadLine: '2022-12-26',
-  done: false
+  done: true
 },
 {
   name: 'Sprzątanie domu',
